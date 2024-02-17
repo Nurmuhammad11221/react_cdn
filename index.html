@@ -9,19 +9,35 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
-      <div class="root"></div>  
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const App = () => {
+            const title = "Welcome to my website";
+            const subtitle = "This is a website to learn React";
+            const address = "https://github.com/Nurmuhammad11221"
+            const handleClick = () => {
+                console.log("You clicked me✌️")
+                console.log("This is title of my website:", title)
+            }
+            return (    
+                <div className="app">
+                    <h1>{title.toUpperCase()}</h1>
+                    <h3>{subtitle}</h3>
+                    <p>Today's date is: {new Date().toDateString()}</p>
+                    <p>Random number : {
+                        Math.floor(Math.random() * 100) + 1
 
 
-      <script type="text/babel">
-        const App = ( )=> {
-            return (
-                <div>
-                <h1>My frist React Component</h1>
+
+                    }</p>   
+                    <a href={address}>My github account</a>
+                    <button onClick={handleClick}>Click me</button>
                 </div>
-            )
+            );
         };
-        const main = ReactDom.createRoot(document.getElementById("root"))
-        main.render(<App/>)
-      </script> 
+        const main = ReactDOM.createRoot(document.getElementById("root"));
+        main.render(<App/>);
+    </script>
 </body>
 </html>
